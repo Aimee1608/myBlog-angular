@@ -1,0 +1,152 @@
+body {
+  box-sizing: border-box;
+  font-size: 14px;
+}
+img {
+  vertical-align: middle;
+  border: 0;
+}
+a {
+  color: #1B242F;
+  text-decoration: none;
+}
+ul {
+  padding: 0;
+  margin: 0;
+  list-style-type: none;
+}
+.clearfix:before,
+.row:before,
+.container:before {
+  content: '';
+  display: table;
+}
+.clearfix:after,
+.row:after,
+.container:after {
+  content: '';
+  display: table;
+  clear: both;
+}
+.img-responsive {
+  max-width: 100%;
+  margin: 0 auto;
+  height: auto;
+}
+.container {
+  padding-right: 15px;
+  padding-left: 15px;
+  margin-right: auto;
+  margin-left: auto;
+}
+/***
+*导航栏
+**/
+.header {
+  text-align: center;
+  padding: 2em 0;
+}
+.logo {
+  padding: 0 0 3em 0;
+}
+.logo a {
+  display: block;
+}
+.header-bottom {
+  padding: 1em 0 0.8em;
+  border-bottom: 1px solid #5f5e5e;
+  border-top: 1px solid #5f5e5e;
+}
+.head-nav {
+  float: left;
+}
+.head-nav ul > li {
+  display: inline-block;
+  margin: 0 .5em;
+  padding: 0 10px 0 0;
+}
+.head-nav ul > li a {
+  padding: 8px 0;
+  position: relative;
+  display: inline-block;
+  margin: 0 2px;
+  letter-spacing: 1px;
+  font-weight: 400;
+  font-size: 16px;
+}
+.menu {
+  padding: 3px 5px;
+  border: 2px solid transparent;
+  display: none;
+}
+.menu:hover {
+  border: 2px solid #d4a258;
+}
+.menu i {
+  display: block;
+  width: 20px;
+  height: 5px;
+  background: #d4a258;
+  margin: 3px 0;
+}
+.search {
+  position: relative;
+  background: url(../img/sbac.png) no-repeat 28px 6px;
+  padding: 11px;
+  width: 23%;
+  float: right;
+}
+.search input[type="text"] {
+  outline: none;
+  color: #555;
+  background: none;
+  font-size: 15px;
+  border: none;
+  width: 75%;
+}
+.search span {
+  background: url('../img/sprit-1.png') no-repeat -3px 1px;
+  padding: 17.5px 17.5px;
+  cursor: pointer;
+  position: absolute;
+  top: 4px;
+  right: 2px;
+}
+@media (min-width: 1201px) {
+  .container {
+    width: 1170px;
+  }
+}
+@media (min-width: 993px) {
+  .container {
+    width: 970px;
+  }
+}
+@media (max-width: 768px) {
+  .container {
+    width: 750px;
+  }
+  .header {
+    padding: 0;
+  }
+  .header-bottom {
+    padding: 0;
+    border-bottom: 1px solid #5f5e5e;
+    border-top: none;
+  }
+  .logo {
+    padding: 1em 0;
+    float: left;
+  }
+  .head-nav span.menu {
+    position: absolute;
+    top: 3em;
+    right: 2em;
+  }
+}
+@media (max-width: 320px) {
+  .logo {
+    padding: 1em 0;
+    width: 50%;
+  }
+}
