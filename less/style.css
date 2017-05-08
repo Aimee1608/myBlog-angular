@@ -148,7 +148,7 @@ ul {
     z-index: 999;
     width: 100%;
     height: 0;
-    background: #556a7f;
+    background: #556A7F;
     transition: all 0.3s ease-in;
     overflow: hidden;
     display: block;
@@ -218,7 +218,7 @@ ul {
   height: 100%;
   position: fixed;
   top: 0;
-  left: 0%;
+  left: 0;
   opacity: 1;
   display: none;
   z-index: 9999;
@@ -233,19 +233,27 @@ ul {
   left: 0;
   top: 0;
   width: 100%;
+  padding: 0;
   white-space: nowrap;
   position: absolute;
+  margin: 0;
+  font-size: 0;
 }
 .swipebox-slider-show {
   transition: all 0.5s ease;
 }
 .swipebox-slider .img-slide {
   display: inline-block;
+  margin: 0;
+  padding: 0;
   width: 100%;
   height: 100%;
   position: relative;
+  font-size: 0;
 }
 .swipebox-slider .img-slide img {
+  margin: 0;
+  padding: 0;
   max-height: 100%;
   max-width: 100%;
   width: 50%;
@@ -479,23 +487,43 @@ ul {
     height: 15px;
   }
 }
-/************************博客日志页面***************************/
-.coding-main {
+/************************实验室页面和学无止境页面***************************/
+.coding-main,
+.learn-main {
   padding: 2em 0;
 }
-.coding-grid {
+.coding-grid,
+.learn-grid {
   margin-bottom: 3em;
   padding: 15px;
   background: #f4f4f4;
   transition: all 0.3s ease-in;
 }
-.coding-grid p {
+.coding-grid p,
+.learn-grid p {
   font-size: 1em;
   line-height: 1.8em;
   color: #141414;
   padding-top: 1.2em;
+  position: relative;
 }
-.coding-grid:hover {
+.learn-grid .learn-more-button1 {
+  margin: 0;
+  text-align: right;
+  position: absolute;
+  right: 0;
+  bottom: -4px;
+  line-height: 1.6rem;
+}
+.learn-grid .post-title {
+  padding: 0;
+  margin: 0;
+}
+.learn-grid p {
+  padding-top: 0.5em;
+}
+.coding-grid:hover,
+.learn-grid:hover {
   box-shadow: 0 8px 17px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
 .post-title {
@@ -522,15 +550,26 @@ ul {
   color: #999;
   font-size: 0.85em;
 }
+.learn-links {
+  padding: 8px 0px;
+}
+.learn-links li {
+  display: inline-block;
+  margin: 0 25px 0 0;
+  color: #999;
+  font-size: 0.85em;
+}
 .more-button1 {
   text-align: left;
   margin: 1.5em 0;
 }
-.coding-rsidebar ul {
+.coding-rsidebar ul,
+.learn-rsidebar ul {
   padding: 0;
   margin-bottom: 30px;
 }
-.coding-rsidebar ul li a {
+.coding-rsidebar ul li a,
+.learn-rsidebar ul li a {
   display: block;
   font-size: 0.9em;
   color: #141414;
@@ -540,26 +579,32 @@ ul {
   -o-transition: all 0.3s ease-out;
   transition: all 0.3s ease-out;
 }
-.coding-rsidebar ul li a i {
+.coding-rsidebar ul li a i,
+.learn-rsidebar ul li a i {
   margin-right: 10px;
   color: #e6a549;
 }
-.coding-rsidebar ul li a:hover {
+.coding-rsidebar ul li a:hover,
+.learn-rsidebar ul li a:hover {
   color: #e6a549;
 }
-.coding-rsidebar h3 {
+.coding-rsidebar h3,
+.learn-rsidebar h3 {
   font-size: 1.5em;
   color: #e6a549;
 }
 .coding-pagination li > a,
-.coding-pagination li > span {
+.learn-pagination li > a,
+.coding-pagination li > span,
+.learn-pagination li > span {
   color: #d4a258;
 }
 @media (max-width: 1024px) {
   .post-title {
     font-size: 1.4em;
   }
-  .coding-rsidebar h3 {
+  .coding-rsidebar h3,
+  .learn-rsidebar h3 {
     font-size: 1.4em;
   }
 }
@@ -574,25 +619,37 @@ ul {
     margin: 0 20px 0 0;
     font-size: 0.85em;
   }
+  .learn-links {
+    margin: 10px 0 0 0;
+  }
+  .learn-links li {
+    margin: 0 20px 0 0;
+    font-size: 0.85em;
+  }
   .more-button1 {
     text-align: center;
   }
-  .coding-rsidebar h3 {
+  .coding-rsidebar h3,
+  .learn-rsidebar h3 {
     font-size: 1.3em;
   }
-  .coding-rsidebar ul {
+  .coding-rsidebar ul,
+  .learn-rsidebar ul {
     margin-bottom: 25px;
   }
-  .coding-rsidebar ul li a {
+  .coding-rsidebar ul li a,
+  .learn-rsidebar ul li a {
     font-size: 0.875em;
     line-height: 2.5em;
   }
-  .coding-rsidebar ul li a i {
+  .coding-rsidebar ul li a i,
+  .learn-rsidebar ul li a i {
     margin-right: 10px;
   }
 }
 @media (max-width: 640px) {
-  .coding-grid p {
+  .coding-grid p,
+  .learn-grid p {
     font-size: 0.875em;
   }
   .post-title {
@@ -605,14 +662,25 @@ ul {
     margin: 0 15px 0 0;
     font-size: 0.82em;
   }
-  .coding-rsidebar h3 {
+  .learn-links {
+    margin: 10px 0 0 0;
+  }
+  .learn-links li {
+    margin: 0 15px 0 0;
+    font-size: 0.82em;
+  }
+  .coding-rsidebar h3,
+  .learn-rsidebar h3 {
     font-size: 1.2em;
   }
-  .coding-pagination {
+  .coding-pagination,
+  .learn-pagination {
     margin: 15px auto;
   }
   .coding-pagination li > a,
-  .coding-pagination li > span {
+  .learn-pagination li > a,
+  .coding-pagination li > span,
+  .learn-pagination li > span {
     font-size: 12px;
     padding: 5px 10px;
   }
@@ -628,50 +696,69 @@ ul {
     margin: 0 10px 0 0;
     font-size: 0.8em;
   }
-  .coding-rsidebar h3 {
+  .learn-links {
+    margin: 10px 0 0 0;
+  }
+  .learn-links li {
+    margin: 0 10px 0 0;
+    font-size: 0.8em;
+  }
+  .coding-rsidebar h3,
+  .learn-rsidebar h3 {
     font-size: 1.1em;
   }
-  .coding-rsidebar ul {
+  .coding-rsidebar ul,
+  .learn-rsidebar ul {
     margin-bottom: 20px;
   }
-  .coding-rsidebar ul li a {
+  .coding-rsidebar ul li a,
+  .learn-rsidebar ul li a {
     font-size: 0.8em;
     line-height: 2em;
   }
-  .coding-rsidebar ul li a i {
+  .coding-rsidebar ul li a i,
+  .learn-rsidebar ul li a i {
     margin-right: 8px;
   }
 }
 @media (max-width: 320px) {
-  .coding-grid {
+  .coding-grid,
+  .learn-grid {
     margin-bottom: 1em;
   }
-  .coding-grid p {
+  .coding-grid p,
+  .learn-grid p {
     font-size: 0.812em;
   }
   .post-title {
     font-size: 1em;
   }
-  .coding-links {
+  .coding-links,
+  .learn-links {
     margin: 15px 0 0 0;
   }
-  .coding-links li {
+  .coding-links li,
+  .learn-links li {
     display: inline-block;
     margin: 0 3px 0 0;
     color: #999;
     font-size: 0.75em;
   }
-  .coding-rsidebar h3 {
+  .coding-rsidebar h3,
+  .learn-rsidebar h3 {
     font-size: 1em;
   }
-  .coding-rsidebar ul {
+  .coding-rsidebar ul,
+  .learn-rsidebar ul {
     margin-bottom: 15px;
   }
-  .coding-rsidebar ul li a {
+  .coding-rsidebar ul li a,
+  .learn-rsidebar ul li a {
     font-size: 0.75em;
     line-height: 1.8em;
   }
-  .coding-rsidebar ul li a i {
+  .coding-rsidebar ul li a i,
+  .learn-rsidebar ul li a i {
     margin-right: 6px;
   }
 }
@@ -839,7 +926,7 @@ ul {
 }
 .music-title .music-logo {
   font-size: 32px;
-  color: #556a7f;
+  color: #556A7F;
 }
 .music-title .music-logo span {
   font-size: 48px;
@@ -982,14 +1069,41 @@ ul {
 }
 .player-box .music-canvas {
   vertical-align: middle;
-  height: 150px;
-  line-height: 150px;
+  height: 110px;
+  line-height: 110px;
+}
+.player-box .music-rotate {
+  width: 100px;
+  height: 100px;
+  margin: 0 auto;
+  vertical-align: middle;
+  position: relative;
+}
+.player-box .music-rotate .music-canvas-bg {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  left: 0;
+  top: 0;
+}
+.player-box .music-rotate .music-canvas-active {
+  width: 80%;
+  height: 80%;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  border-radius: 50%;
+}
+.player-box .music-playing {
+  animation: music-btn 3s linear infinite;
+  -webkit-animation: music-btn 3s linear infinite;
 }
 .player-box .glyphicon-box {
   vertical-align: middle;
   text-align: center;
-  height: 150px;
-  line-height: 150px;
+  height: 110px;
+  line-height: 110px;
 }
 .player-box .glyphicon-box i.glyphicon {
   vertical-align: middle;
@@ -997,9 +1111,9 @@ ul {
   cursor: pointer;
 }
 .player-box .music-line {
-  height: 150px;
+  height: 110px;
   vertical-align: middle;
-  padding-top: 45px;
+  padding-top: 30px;
 }
 .player-box .music-line span {
   display: inline-block;
@@ -1010,7 +1124,7 @@ ul {
 }
 .player-box .music-line span .music-line-model {
   display: block;
-  width: 80px;
+  width: 0px;
   height: 5px;
   background: #e6a549;
   position: relative;
@@ -1026,6 +1140,26 @@ ul {
   right: 0;
   top: 50%;
   transform: translate(50%, -50%);
+}
+@-webkit-keyframes music-btn {
+  form {
+    -webkit-transform: rotateZ(0deg);
+    transform: rotateZ(0deg);
+  }
+  to {
+    -webkit-transform: rotateZ(360deg);
+    transform: rotateZ(360deg);
+  }
+}
+@keyframes music-btn {
+  form {
+    -webkit-transform: rotateZ(0deg);
+    transform: rotateZ(0deg);
+  }
+  to {
+    -webkit-transform: rotateZ(360deg);
+    transform: rotateZ(360deg);
+  }
 }
 @media (max-width: 1024px) {
   .music-canvas {
@@ -1186,7 +1320,7 @@ ul {
   }
   .music-title .music-logo {
     font-size: 18px;
-    color: #556a7f;
+    color: #556A7F;
   }
   .music-title .music-logo span {
     font-size: 28px;
@@ -1199,4 +1333,25 @@ ul {
   .music-title .search-music input[type="text"] {
     font-size: 12px;
   }
+}
+/***********留言板*************/
+.message-content {
+  width: 100%;
+}
+.message-content .message-list {
+  width: 100%;
+}
+.message-content .message-list .message-user-img {
+  width: 50px;
+  float: left;
+}
+.message-content .message-list .message-user-img img {
+  width: 50px;
+  height: 50px;
+  border-radius: 5px;
+}
+.message-content .message-user-name {
+  box-sizing: border-box;
+  width: 100%;
+  padding-left: 60px;
 }

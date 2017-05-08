@@ -267,7 +267,7 @@ ul{
   height: 100%;
   position: fixed;
   top: 0;
-  left:0%;
+  left:0;
   opacity: 1;
   display:none;
   z-index: 9999;
@@ -282,20 +282,27 @@ ul{
   height: 100%;
   left: 0;
   top: 0;
-  width: 100%;
+  width:100%;
+  padding:0;
   white-space: nowrap;
   position: absolute;
-
+  margin:0;
+  font-size:0;
 }
 .swipebox-slider-show{
   transition: all 0.5s ease;
 }
 .swipebox-slider .img-slide{
   display:inline-block;
+  margin:0;
+  padding:0;
   width:100%;
   height:100%;
   position: relative;
+  font-size:0;
   img{
+    margin:0;
+    padding:0;
     max-height: 100%;
     max-width: 100%;
     width:50%;
@@ -533,24 +540,45 @@ ul{
   }
 
 }
-/************************博客日志页面***************************/
-.coding-main{
+/************************实验室页面和学无止境页面***************************/
+.coding-main,.learn-main{
   padding:2em 0;
 }
-.coding-grid{
+.coding-grid,.learn-grid{
   margin-bottom: 3em;
   padding:15px;
   background:#f4f4f4;
   //box-shadow: 1px 0 5px 0 #f8f8f8;
   transition: all 0.3s ease-in;
+
   p{
     font-size: 1em;
     line-height: 1.8em;
     color: #141414;
     padding-top: 1.2em;
+    position: relative;
+  }
+
+}
+.learn-grid{
+  .learn-more-button1{
+    margin:0;
+    text-align: right;
+    position:absolute;
+    right:0;
+    bottom:-4px;
+    line-height: 1.6rem;
+  }
+  .post-title{
+    padding:0;
+    margin:0;
+  }
+  p{
+    padding-top:0.5em;
   }
 }
-.coding-grid:hover{
+
+.coding-grid:hover,.learn-grid:hover{
   box-shadow: 0 8px 17px 0 rgba(0,0,0,0.2),0 6px 20px 0 rgba(0,0,0,0.19);
 }
 .post-title{
@@ -577,11 +605,22 @@ ul{
     font-size: 0.85em;
   }
 }
+
+.learn-links{
+  padding:8px 0px;
+  li{
+    display:inline-block;
+    margin:0 25px 0 0;
+    color:#999;
+    font-size: 0.85em;
+  }
+}
+
 .more-button1 {
   text-align: left;
   margin: 1.5em 0;
 }
-.coding-rsidebar ul{
+.coding-rsidebar ul,.learn-rsidebar ul{
   padding:0;
   margin-bottom:30px;
   li a{
@@ -602,11 +641,11 @@ ul{
     color:@theme-color02;
   }
 }
-.coding-rsidebar h3{
+.coding-rsidebar h3,.learn-rsidebar h3{
   font-size: 1.5em;
   color:@theme-color02;
 }
-.coding-pagination{
+.coding-pagination,.learn-pagination{
    li > a, li > span{
      color:@theme-color;
    }
@@ -615,7 +654,7 @@ ul{
   .post-title {
     font-size: 1.4em;
   }
-  .coding-rsidebar h3{
+  .coding-rsidebar h3,.learn-rsidebar h3{
     font-size: 1.4em;
   }
 }
@@ -624,8 +663,15 @@ ul{
   .post-title {
     font-size: 1.3em;
   }
-  .coding-links {
+  .coding-links{
     margin: 25px 0 0 0;
+    li {
+      margin: 0 20px 0 0;
+      font-size: 0.85em;
+    }
+  }
+  .learn-links {
+    margin: 10px 0 0 0;
     li {
       margin: 0 20px 0 0;
       font-size: 0.85em;
@@ -634,10 +680,10 @@ ul{
   .more-button1 {
     text-align: center;
   }
-  .coding-rsidebar h3{
+  .coding-rsidebar h3, .learn-rsidebar h3{
     font-size: 1.3em;
   }
-  .coding-rsidebar ul{
+  .coding-rsidebar ul,.learn-rsidebar ul{
     margin-bottom:25px;
     li a{
       font-size: 0.875em;
@@ -650,7 +696,7 @@ ul{
 }
 
 @media (max-width:640px){
-  .coding-grid p {
+  .coding-grid p ,.learn-grid p{
     font-size: 0.875em;
   }
   .post-title {
@@ -663,10 +709,17 @@ ul{
       font-size: 0.82em;
     }
   }
-  .coding-rsidebar h3{
+  .learn-links {
+    margin: 10px 0 0 0;
+    li {
+      margin: 0 15px 0 0;
+      font-size: 0.82em;
+    }
+  }
+  .coding-rsidebar h3,.learn-rsidebar h3{
     font-size: 1.2em;
   }
-  .coding-pagination{
+  .coding-pagination,.learn-pagination{
     margin:15px auto;
     li > a, li > span{
       font-size: 12px;
@@ -678,17 +731,24 @@ ul{
   .post-title {
     font-size: 1.1em;
   }
-  .coding-links {
+  .coding-links{
     margin: 20px 0 0 0;
     li {
       margin: 0 10px 0 0;
       font-size: 0.8em;
     }
   }
-  .coding-rsidebar h3{
+  .learn-links {
+    margin: 10px 0 0 0;
+    li {
+      margin: 0 10px 0 0;
+      font-size: 0.8em;
+    }
+  }
+  .coding-rsidebar h3,.learn-rsidebar h3{
     font-size: 1.1em;
   }
-  .coding-rsidebar ul{
+  .coding-rsidebar ul,.learn-rsidebar ul{
     margin-bottom: 20px;
     li a{
       font-size: 0.8em;
@@ -701,7 +761,7 @@ ul{
 }
 
 @media (max-width:320px){
-  .coding-grid {
+  .coding-grid ,.learn-grid{
     margin-bottom: 1em;
     p {
       font-size: 0.812em;
@@ -711,7 +771,7 @@ ul{
   .post-title {
     font-size: 1em;
   }
-  .coding-links {
+  .coding-links ,.learn-links{
     margin: 15px 0 0 0;
     li {
       display: inline-block;
@@ -720,10 +780,10 @@ ul{
       font-size: 0.75em;
     }
   }
-  .coding-rsidebar h3{
+  .coding-rsidebar h3,.learn-rsidebar h3{
     font-size: 1em;
   }
-  .coding-rsidebar ul{
+  .coding-rsidebar ul,.learn-rsidebar ul{
     margin-bottom: 15px;
     li a{
       font-size: 0.75em;
@@ -1052,14 +1112,41 @@ ul{
   }
   .music-canvas{
     vertical-align: middle;
-    height:150px;
-    line-height: 150px;
+    height:110px;
+    line-height: 110px;
+  }
+  .music-rotate{
+    width:100px;
+    height:100px;
+    margin:0 auto;
+    vertical-align: middle;
+    position: relative;
+    .music-canvas-bg{
+      width:100%;
+      height:100%;
+      position: absolute;
+      left:0;
+      top:0;
+    }
+    .music-canvas-active{
+      width:80%;
+      height:80%;
+      position: absolute;
+      left:50%;
+      top:50%;
+      transform: translate(-50%,-50%);
+      border-radius: 50%;
+    }
+  }
+  .music-playing{
+    animation: music-btn 3s linear infinite;
+    -webkit-animation: music-btn 3s linear infinite;
   }
   .glyphicon-box {
     vertical-align: middle;
     text-align: center;
-    height:150px;
-    line-height: 150px;
+    height:110px;
+    line-height: 110px;
     i.glyphicon{
       vertical-align: middle;
       font-size:32px;
@@ -1067,9 +1154,9 @@ ul{
     }
   }
   .music-line{
-    height:150px;
+    height:110px;
     vertical-align: middle;
-    padding-top: 45px;
+    padding-top: 30px;
   }
   .music-line span{
     display:inline-block;
@@ -1079,7 +1166,7 @@ ul{
     cursor: pointer;
     .music-line-model{
       display:block;
-      width:80px;
+      width:0px;
       height:5px;
       background:@theme-color02;
       position: relative;
@@ -1100,6 +1187,26 @@ ul{
   }
 }
 
+@-webkit-keyframes music-btn{
+  form{
+    -webkit-transform: rotateZ(0deg);
+    transform:rotateZ(0deg);
+  }
+  to{
+    -webkit-transform: rotateZ(360deg);
+    transform:rotateZ(360deg);
+  }
+}
+@keyframes music-btn{
+  form{
+    -webkit-transform: rotateZ(0deg);
+    transform:rotateZ(0deg);
+  }
+  to{
+    -webkit-transform: rotateZ(360deg);
+    transform:rotateZ(360deg);
+  }
+}
 @media (max-width:1024px){
   .music-canvas{
     height:120px;
@@ -1281,4 +1388,26 @@ ul{
 }
 
 
+/***********留言板*************/
+.message-content{
+  width:100%;
+  .message-list{
+    width:100%;
+    .message-user-img{
+      width:50px;
+      float:left;
+      img{
+        width:50px;
+        height:50px;
+        border-radius: 5px;
+      }
+    }
+  }
+  .message-user-name{
+    box-sizing: border-box;
+    width:100%;
+    padding-left:60px;
+    //float:right;
+  }
+}
 

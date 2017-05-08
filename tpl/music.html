@@ -5,14 +5,12 @@
             <p class="music-logo"><span>M</span>p3</p>
         </div>
         <div class="col-xs-6 text-right">
-
-                <form class="search-music">
-                    <label for="searchMusicinput">
-                        <input type="text" id="searchMusicinput" placeholder="输入..."/>
-                        <span></span>
-                    </label>
-                </form>
-
+            <form class="search-music">
+                <label for="searchMusicinput">
+                    <input type="text" id="searchMusicinput" placeholder="输入..."/>
+                    <span></span>
+                </label>
+            </form>
         </div>
     </div>
 </div>
@@ -167,7 +165,10 @@
 <div class="player-box">
     <div class="container music-player-now" id="musicMain">
         <div class="col-xs-3 col-md-2 col-xxs-6 music-canvas">
-            <canvas id="cmusic" width="120" height="120"></canvas>
+            <div class="music-rotate">
+                <img class="music-canvas-bg" ng-src="img/soundpic.png" alt=""/>
+                <img class="music-canvas-active" ng-src="img/disc.png" alt=""/>
+            </div>
         </div>
         <div class="col-xs-3 col-md-2 col-xxs-6 glyphicon-box ">
             <i class="glyphicon glyphicon-step-backward"></i>
@@ -176,8 +177,8 @@
         </div>
         <div class="col-xs-6 col-md-8 col-xxs-12 music-line">
             <a href="">晴天---周杰伦</a>
-            <span  id="musicline"><i class="music-line-model"></i></span>
+            <span  id="musicline"><i id="music-line-model" class="music-line-model"></i></span>
         </div>
-        <audio ng-src="res/bg.mp3" id="bgm"></audio>
+        <audio ng-src="res/bg.mp3" preload="auto" id="bgm"></audio>
     </div>
 </div>
