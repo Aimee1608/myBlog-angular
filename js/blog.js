@@ -42,6 +42,7 @@ app.controller('myCtrl',['$scope','$location','$http','$interval','$timeout',fun
     };
     /********导航栏选中状态设置**********/
     $scope.headerWho = function(){
+        $('#caidan').removeClass('head-slide');
          $('#caidan li').removeClass('head-active');
          var tpl = window.location.hash;
          //console.log(tpl);
