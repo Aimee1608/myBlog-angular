@@ -88,10 +88,6 @@ body {
   font-family: Arial, "STHeiti", Helvetica, sans-serif;
   background: #fff;
   font-size: 14px;
-  height: 100%;
-  max-width: 750px;
-  min-width: 20pc;
-  line-height: 1.5;
   -webkit-tap-highlight-color: transparent;
 }
 table {

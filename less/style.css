@@ -88,10 +88,6 @@ body {
   font-family: Arial, "STHeiti", Helvetica, sans-serif;
   background: #fff;
   font-size: 14px;
-  height: 100%;
-  max-width: 750px;
-  min-width: 20pc;
-  line-height: 1.5;
   -webkit-tap-highlight-color: transparent;
 }
 table {
@@ -181,7 +177,7 @@ ul {
   list-style-type: none;
 }
 /***
-*导航栏
+*������
 **/
 .header {
   text-align: center;
@@ -264,13 +260,13 @@ ul {
 }
 /***************footer*******************/
 .footer {
-  background: url(../img/foot.png) no-repeat fixed top;
+  background: url(../img/foot.png) no-repeat fixed bottom;
   background-size: cover;
   -webkit-background-size: cover;
   width: 100%;
   height: 100%;
   text-align: center;
-  padding: 0 0 1em 0;
+  padding: 20px 0;
 }
 .social ul {
   padding: 0;
@@ -280,7 +276,52 @@ ul {
   display: inline-block;
   padding: 0 0.5em;
 }
-/**************媒体查询*****************/
+/**************ý����ѯ*****************/
+@media (min-width: 769px) {
+  .scroll-show {
+    width: 100%;
+    height: 390px;
+    background: #fff;
+  }
+  .scroll-show .head-bg {
+    width: 100%;
+    text-align: center;
+    vertical-align: middle;
+    position: fixed;
+    top: -49.4px;
+    left: 0;
+    z-index: 999;
+    background: #eee;
+    box-shadow: 2px 2px 5px 0 rgba(0, 0, 0, 0.3);
+    animation: show-head 0.3s ease-in forwards;
+  }
+  .scroll-show .container {
+    padding: 0;
+  }
+  .scroll-show .container .logo {
+    width: 156px;
+    height: 49.4px;
+    padding: 0;
+    float: left;
+  }
+  .scroll-show .container .header-bottom {
+    box-sizing: border-box;
+    width: 100%;
+    padding: 8px 0 6px 162.5px;
+    border: none;
+  }
+  .scroll-show .container .header-bottom ul > li {
+    margin: 0 10px;
+  }
+  @keyframes show-head {
+    0% {
+      top: -49.4px;
+    }
+    100% {
+      top: 0;
+    }
+  }
+}
 @media (max-width: 768px) {
   .header {
     padding: 0;
@@ -332,8 +373,8 @@ ul {
     height: 350px;
   }
 }
-/***********************开始主页面*************************/
-/******广告轮播*******/
+/***********************��ʼ��ҳ��*************************/
+/******�����ֲ�*******/
 .carousel-indicators .active {
   background: #e6a549;
   border-color: #e6a549;
@@ -344,7 +385,7 @@ ul {
 .carousel-control:hover span.glyphicon {
   opacity: 0.5;
 }
-/***********自我介绍****************/
+/***********���ҽ���****************/
 .about-me {
   margin: 4em 0;
 }
@@ -362,7 +403,7 @@ ul {
 .about-me h3:hover {
   box-shadow: 5px 0px 10px 0px #BBB9B9;
 }
-/*******图片展示********/
+/*******ͼƬչʾ********/
 .pictures-view .col-xs-3 {
   padding: 0;
   overflow: hidden;
@@ -487,7 +528,7 @@ ul {
     width: 65%;
   }
 }
-/********音乐播放器 **********/
+/********���ֲ����� **********/
 .more-button {
   text-align: right;
 }
@@ -509,7 +550,7 @@ ul {
 .more:hover {
   color: #e6a549;
 }
-/*************代码日志**************/
+/*************������־**************/
 .music-coding {
   padding: 0 0 3em;
 }
@@ -647,7 +688,7 @@ ul {
     height: 15px;
   }
 }
-/************************实验室页面和学无止境页面***************************/
+/************************ʵ����ҳ����ѧ��ֹ��ҳ��***************************/
 .coding-main,
 .learn-main {
   padding: 2em 0;
@@ -667,13 +708,20 @@ ul {
   padding-top: 1.2em;
   position: relative;
 }
+.learn-grid .col-xs-3 {
+  padding-left: 0;
+  padding-right: 0;
+}
+.learn-grid .col-xs-9 {
+  padding-right: 0;
+}
 .learn-grid .learn-more-button1 {
+  float: right;
+  margin: 0;
+}
+.learn-grid .learn-more-button1 > span {
   margin: 0;
   text-align: right;
-  position: absolute;
-  right: 0;
-  bottom: -4px;
-  line-height: 1.6rem;
 }
 .learn-grid .post-title {
   padding: 0;
@@ -753,11 +801,20 @@ ul {
   font-size: 1.5em;
   color: #e6a549;
 }
-.coding-pagination li > a,
-.learn-pagination li > a,
-.coding-pagination li > span,
-.learn-pagination li > span {
+.right-pagination {
+  text-align: right;
+}
+.pagination li a {
+  border: 1px solid #d4a258;
+}
+.pagination li > a,
+.pagination li > span {
   color: #d4a258;
+}
+.pagination li a:hover {
+  border: 1px solid #d4a258;
+  background: #d4a258;
+  color: #fff;
 }
 @media (max-width: 1024px) {
   .post-title {
@@ -833,14 +890,11 @@ ul {
   .learn-rsidebar h3 {
     font-size: 1.2em;
   }
-  .coding-pagination,
-  .learn-pagination {
+  .pagination {
     margin: 15px auto;
   }
-  .coding-pagination li > a,
-  .learn-pagination li > a,
-  .coding-pagination li > span,
-  .learn-pagination li > span {
+  .pagination li > a,
+  .pagination li > span {
     font-size: 12px;
     padding: 5px 10px;
   }
@@ -857,7 +911,7 @@ ul {
     font-size: 0.8em;
   }
   .learn-links {
-    margin: 10px 0 0 0;
+    margin: 0;
   }
   .learn-links li {
     margin: 0 10px 0 0;
@@ -879,6 +933,16 @@ ul {
   .coding-rsidebar ul li a i,
   .learn-rsidebar ul li a i {
     margin-right: 8px;
+  }
+  .learn-grid .learn-more-button1 {
+    padding-top: 5px;
+    width: 100%;
+    text-align: center;
+    margin: 0;
+  }
+  .learn-grid .learn-more-button1 > span {
+    margin: 0;
+    text-align: center;
   }
 }
 @media (max-width: 320px) {
@@ -922,7 +986,7 @@ ul {
     margin-right: 6px;
   }
 }
-/**********************************图片展示页面********************************/
+/**********************************ͼƬչʾҳ��********************************/
 .picture-main .row div {
   padding: 0;
 }
@@ -1052,7 +1116,7 @@ ul {
     margin-top: 15px;
   }
 }
-/**********************************音乐播放器页面********************************/
+/**********************************���ֲ�����ҳ��********************************/
 .rslides {
   position: relative;
   list-style: none;
@@ -1143,8 +1207,8 @@ ul {
 }
 .music-list-title {
   font-weight: 400;
-  margin: 50px 0;
-  font-size: 48px;
+  margin: 35px 0;
+  font-size: 32px;
 }
 .playlist-item-box {
   position: relative;
@@ -1494,16 +1558,17 @@ ul {
     font-size: 12px;
   }
 }
-/***********留言板*************/
+/***********���԰�*************/
 .message-title {
   border-bottom: 1px solid #e6a549;
 }
 .message-content {
   width: 100%;
-  padding-top: 15px;
+  padding-bottom: 20px;
 }
 .message-content .message-list {
   width: 100%;
+  padding-top: 15px;
 }
 .message-content .message-list .message-user-img {
   padding-top: 3px;
@@ -1601,17 +1666,10 @@ ul {
   color: #fff;
   background: #e6a549;
   width: 50px;
-  outline: none;
-  -webkit-appearance: none;
   -webkit-tap-highlight-color: transparent;
-  box-shadow: none;
-  border: none;
-  border-radius: 0;
 }
 .message-content .back-message .ture-textarea p .t_button a {
   width: 40px;
-  display: inline-block;
-  text-align: center;
   color: #e6a549;
 }
 .message-content .back-message .ture-textarea p .t_rule {

@@ -92,12 +92,33 @@ app.controller('myCtrl',['$scope','$location','$http','$interval','$timeout',fun
             $('#'+swipeone+' .swipebox-slider').css('left',0).removeClass('swipebox-slider-show');
         };
     };
+    /*********屏幕高度，导航栏顶部固定***********/
+    $(function(){
+        $(window).scroll( function() {
+            /* ...do something... */
+            var sh = $(window).scrollTop();
+            if(sh>240){
+                console.log(333);
+                if(!$('#header').hasClass('scroll-show')){
+                    $('#header').addClass('scroll-show');
+                }
+            }else{
+                $('#header').removeClass('scroll-show');
+                console.log(444);
+            }
+            //console.log();
 
+        } );
+    })
 
 
 }]);
 app.controller('startCtrl',['$scope','$location','$http','$interval',function($scope,$location,$http,$interval){
     $scope.headerWho();
+    $(function(){
+        $('#mycarousel').carousel();
+    });
+
 
 }]);
 

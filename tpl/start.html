@@ -1,7 +1,7 @@
 
 <div class="banner">
     <div class="container">
-        <div id="mycarousel" class="carousel slide" data-ride="carousel">
+        <div id="mycarousel" class="carousel slide" data-ride="carousel" data-interval="3000">
             <!-- Indicators -->
             <ol class="carousel-indicators">
                 <li data-target="#mycarousel" data-slide-to="0" class="active"></li>
@@ -15,25 +15,25 @@
                 <div class="item active">
                     <img ng-src="img/img15.jpg" alt="">
                     <div class="carousel-caption">
-                        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab alias amet aperiam asperiores assumenda autem beatae consectetur cupiditate, delectus eius eos excepturi explicabo, libero maxime perspiciatis provident reprehenderit rerum vero?
+                        Lorem ipsum dolor sit delectus eius eos excepturi explicabo, libero maxime perspiciatis provident reprehenderit rerum vero?
                     </div>
                 </div>
                 <div class="item">
                     <img ng-src="img/img16.jpg" alt="">
                     <div class="carousel-caption">
-                        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Animi aspernatur assumenda atque, eos hic mollitia odio quod! A ab alias, architecto, asperiores dignissimos doloribus fugit hic illum minima odit quibusdam!
+                        Lorem ipsum dolorasperiores dignissimos doloribus fugit hic illum minima odit quibusdam!
                     </div>
                 </div>
                 <div class="item">
                     <img ng-src="img/img17.jpg" alt="">
                     <div class="carousel-caption">
-                        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cupiditate deleniti iusto recusandae repudiandae. Id maiores necessitatibus ullam. Aperiam, doloremque rerum. A dolorum earum illum libero possimus sequi tempore tenetur, vero.
+                        Lorem ipsum  rerum. A dolorum earum illum libero possimus sequi tempore tenetur, vero.
                     </div>
                 </div>
                 <div class="item">
                     <img ng-src="img/img18.jpg" alt="">
                     <div class="carousel-caption">
-                        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Asperiores beatae consequuntur dignissimos dolorum iste molestiae natus nobis nulla obcaecati pariatur praesentium, quam quod ratione reprehenderit sit tempore ut? Labore, quaerat!
+                        Lorem ipsum  dolorumquod ratione reprehenderit sit tempore ut? Labore, quaerat!
                     </div>
                 </div>
             </div>
@@ -53,11 +53,12 @@
 <div class="about-me">
     <div class="container">
        <h3>
-           Lorem ipsum dolor sit amet, consectetur adipisicing elit. Adipisci corporis, dolore ea excepturi, fugiat illo iure molestiae neque rerum, sapiente vel voluptates! Adipisci asperiores dolor earum minus nobis non, ratione!
+           座右铭之类：Lorem ipsum dolor sit amet, sequi! Animi distinctio dolorem fugit, nihil repellendus voluptas!
        </h3>
     </div>
 </div>
 <div class="pictures-view">
+    <!--循环生成-->
     <div class="container" id="picture-swipebox" >
             <div class="col-xs-3 col-xxs-6" ng-click="chooseWho('swipebox-overlay01',0)">
                 <a href=""><img class="img-responsive" ng-src="img/img13.jpg" alt=""/></a>
@@ -88,15 +89,15 @@
 <div class="music-coding">
     <div class="container">
         <div class="col-xs-12 col-md-6 music-view">
-            <h3><span>More</span> About Author</h3>
+            <h3><span>我</span> 自己</h3>
             <p><span>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab adipisci beatae distinctio doloremque eaque excepturi facere harum magnam molestias nemo placeat, porro quaerat qui quo rem soluta, sunt tenetur ut.</span><span>Dignissimos magnam, nihil numquam perferendis quos ratione. Amet culpa doloribus dolorum nihil voluptatum. Accusantium atque blanditiis deserunt dignissimos eaque ex fugit ipsum, modi molestias provident, quo recusandae rem repellendus voluptatem!</span><span>Dignissimos doloremque, harum ipsam molestias nemo nihil? Beatae commodi consequuntur corporis eaque eum hic illo libero modi necessitatibus nemo non numquam optio, perspiciatis quasi repellendus soluta temporibus ullam vel veniam.</span>
             </p>
             <div class="more-button">
-                <a href="" class="more">更多&gt;&gt;</a>
+                <a href="#/author" class="more">更多&gt;&gt;</a>
             </div>
         </div>
         <div class="col-xs-12 col-md-6 coding-view">
-            <h3><span>Recent</span> Blog Post</h3>
+            <h3><span>最</span> 新的动态</h3>
             <div class="coding-view-top">
                 <div class="coding-view-left">
                     <img  ng-src="img/img9.jpg" class="img-responsive" alt="">
@@ -133,6 +134,7 @@
     </div>
 </div>
 <div id="swipebox-overlay01" class="swipebox-overlay" >
+    <!--循环生成-->
     <ul id="swipebox-slider" class="swipebox-slider">
         <li class="img-slide">
             <img class="img-responsive" ng-src="img/img13.jpg" alt=""/>
