@@ -138,8 +138,8 @@ app.controller('musicCtrl',['$scope','$location','$http','$interval',function($s
         function musicT(time){
             var m,s,t;
             var d = new Date(time*1000);
-            m = d.getMinutes()>10?d.getMinutes():0+''+d.getMinutes();
-            s = d.getSeconds()>10?d.getSeconds():0+''+d.getSeconds();
+            m = d.getMinutes()>=10?d.getMinutes():0+''+d.getMinutes();
+            s = d.getSeconds()>=10?d.getSeconds():0+''+d.getSeconds();
             t = m+':'+s;
             return t;
         }
