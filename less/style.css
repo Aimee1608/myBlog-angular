@@ -399,6 +399,7 @@ ul {
   line-height: 1.8em;
   margin: 0;
   transition: all 0.3s ease-in;
+  font-style: italic;
 }
 .about-me h3:hover {
   box-shadow: 5px 0px 10px 0px #BBB9B9;
@@ -1267,6 +1268,9 @@ ul {
 .player-list {
   table-layout: fixed;
 }
+.player-list tr {
+  cursor: pointer;
+}
 .player-list thead tr th:first-child {
   width: 5%;
 }
@@ -1338,6 +1342,9 @@ ul {
   height: 110px;
   vertical-align: middle;
   padding-top: 30px;
+}
+.player-box .music-line p {
+  float: right;
 }
 .player-box .music-line span {
   display: inline-block;
@@ -1650,12 +1657,15 @@ ul {
 .message-content .back-message .ture-textarea {
   box-sizing: border-box;
   width: 100%;
+  display: none;
+}
+.message-content .back-message .ture-textarea .btn {
+  outline: none;
 }
 .message-content .back-message .ture-textarea textarea {
   border: 1px solid #e6a549;
   width: 376px;
   height: 44px;
-  padding: 0 5px;
   margin-bottom: 5px;
   border-radius: 0;
 }

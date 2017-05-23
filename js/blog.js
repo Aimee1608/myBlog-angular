@@ -98,28 +98,21 @@ app.controller('myCtrl',['$scope','$location','$http','$interval','$timeout',fun
             /* ...do something... */
             var sh = $(window).scrollTop();
             if(sh>240){
-                console.log(333);
                 if(!$('#header').hasClass('scroll-show')){
                     $('#header').addClass('scroll-show');
                 }
             }else{
                 $('#header').removeClass('scroll-show');
-                console.log(444);
             }
-            //console.log();
 
         } );
     })
-
-
 }]);
 app.controller('startCtrl',['$scope','$location','$http','$interval',function($scope,$location,$http,$interval){
     $scope.headerWho();
     $(function(){
         $('#mycarousel').carousel();
     });
-
-
 }]);
 
 
@@ -142,6 +135,15 @@ app.controller('musicCtrl',['$scope','$location','$http','$interval',function($s
         },3000);
 
         /*****音乐播放器*****/
+        function musicT(time){
+            var m,s,t;
+            var d = new Date(time*1000);
+            m = d.getMinutes()>10?d.getMinutes():0+''+d.getMinutes();
+            s = d.getSeconds()>10?d.getSeconds():0+''+d.getSeconds();
+            t = m+':'+s;
+            return t;
+        }
+        $scope.mTime = {musicTime:'00:00',currentTime:'00:00'};
         var musicTime;
         var bgm = $('#bgm')[0];
         var wline = parseFloat($('#musicline').css('width'));
@@ -149,10 +151,17 @@ app.controller('musicCtrl',['$scope','$location','$http','$interval',function($s
         bgm.load();
         bgm.onloadedmetadata=function(){
             musicTime = bgm.duration;
+            $scope.mTime.musicTime=musicT(bgm.duration);
             console.log(musicTime);
         };
         bgm.ontimeupdate = function(){
             scale = bgm.currentTime/ musicTime;
+            //console.log($scope.mTime);
+            //$scope.$watch('mTime',function(){
+                $scope.mTime.currentTime = musicT(bgm.currentTime);
+                console.log($scope.mTime);
+            //});
+
             $('#music-line-model').css('width',wline*scale+'px');
             if(scale<=0||scale>=1){
                 $(this).removeClass('glyphicon-pause').addClass('glyphicon-play');
@@ -163,6 +172,7 @@ app.controller('musicCtrl',['$scope','$location','$http','$interval',function($s
             }
 
         };
+
         $('#playOrpause').click(function(){
             if(bgm.paused){
                 bgm.play();
@@ -201,6 +211,24 @@ app.controller('learnCtrl',['$scope','$location','$http',function($scope,$locati
 }]);
 app.controller('messageCtrl',['$scope','$location','$http',function($scope,$location,$http){
     $scope.headerWho();
+    $('.false-textarea').on('click',function(){
+        $(this).hide();
+        var textareabox = $(this).next('.ture-textarea');
+        $(textareabox).show();
+        $(textareabox).find('textarea').focus();
+    });
+    $('.btncancel').on('click',function(){
+        var textareabox =  $(this).parent().parent().parent('.ture-textarea');
+        $(textareabox).find('textarea').val('');
+        $(textareabox).find('.t_rule').html('0/2000');
+        $(textareabox).hide();
+        $(this).parent().parent().parent().prev('.false-textarea').show();
+    });
+    $('textarea').on('keyup',function(){
+       var text = $(this).val();
+        console.log(text.length);
+        $(this).next().find('.t_rule').html(text.length+'/2000');
+    })
 }]);
 app.controller('authorCtrl',['$scope','$location','$http',function($scope,$location,$http){
     $scope.headerWho();
